@@ -8,6 +8,18 @@ console.log(cartoes);
 
 let cartaoAtual = 0;
 
+cartoes.forEach(cartao => {
+    console.log(cartao);
+    cartao.addEventListener('click', function(){
+        const cartaVirada = cartao.querySelector('.carta-virada');
+        cartao.classList.toggle('virar');
+        cartaVirada.classList.toggle('mostrar-fundo-carta');
+
+        const descricao = cartao.querySelector('.descricao');
+        descricao.classList.toggle('esconder');
+    })
+});
+
 // FUNCOES
 function esconderCartaoSelecionado() {
     const cartaoSelecionado = document.querySelector('.selecionado');
